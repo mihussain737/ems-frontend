@@ -8,7 +8,7 @@ const HeaderComponent = () => {
           <header>
                <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
                      <a className="navbar-brand" href="https://www.google.com">Employee Management System</a>
-                       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                       <div className="navbar-nav">
                         <ul className="navbar-nav">
                           <li className="nav-item"></li>

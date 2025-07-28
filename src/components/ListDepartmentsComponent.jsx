@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { getAllDepartments } from '../services/Department';
 
 const ListDepartmentsComponent = () => {
 
-     let  dummyData=[
+     /*let  dummyData=[
           {
                "id":1,
                "departmentName":"R&D",
@@ -18,9 +19,17 @@ const ListDepartmentsComponent = () => {
                "departmentName":"Sports",
                "departmentDescription":"Sports Department"
           }
-     ]
+     ] */
 
-     const [departments,setDepartments]=useState(dummyData);
+     const [departments,setDepartments]=useState([]);
+     useEffect( ()=>{
+          getAllDepartments().then((response)=>{
+               console.log(response.data);
+               setDepartments(response.data);
+          }).catch(error=>{
+               console.error(error)
+          })
+     },[])
 
      
   return (

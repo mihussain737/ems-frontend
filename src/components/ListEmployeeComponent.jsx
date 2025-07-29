@@ -47,16 +47,26 @@ const ListEmployeeComponent = () => {
           }
 
           function updateEmployee(id){
-               navigator(`/edit-employee/${id}`)
+               let flagConfirm= confirm("Are you sure want to edit this!!")
+               if(flagConfirm){
+                    navigator(`/edit-employee/${id}`)
+               }
+               
           }
 
           function removeEmployee(id){
+              let flagConfirm= confirm("Are you sure want to delete!!")
+              if(flagConfirm){
                console.log(id);
                deleteEmployee(id).then((response)=>{
                     getAllEmployees()
                }).catch(error=>{
                     console.error(error)
                })
+              }else{
+               getAllEmployees()
+              }
+               
           }
 
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAllDepartments } from '../services/Department';
+import { getAllDepartments } from '../services/DepartmentService';
 import { Link } from 'react-router-dom';
 
 const ListDepartmentsComponent = () => {
